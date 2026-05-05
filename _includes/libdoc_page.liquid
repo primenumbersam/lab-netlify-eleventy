@@ -64,14 +64,14 @@
     <link rel="stylesheet" href="/core/assets/css/ds__dark_mode.css" media="(prefers-color-scheme: dark)" id="libdoc_dark_mode_css">
     <link rel="stylesheet" href="/core/assets/css/hljs/night-owl.css">
     <link rel="stylesheet" href="/core/assets/css/icons.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" integrity="sha384-n9CRHnuSI7yISuFOLqpIyBRvyLA7QG/CH9JHxe6lp1W56vW+63C1S29mS4s/a/l5" crossorigin="anonymous">
+
     <style>
         :root {
             --libdoc-image-background-color-light-mode: {{ libdocConfig.imgBgColorLightMode }};
             --libdoc-image-background-color-dark-mode: {{ libdocConfig.imgBgColorDarkMode }};
             --libdoc-image-background-color: var(--libdoc-image-background-color-light-mode);
-            --ita-widths-sidebar: {{ libdocSystem.widthSidebar }}px;
-            --ita-widths-content: {{ libdocSystem.widthContent }}px;
-            --ita-widths-main-container-max: calc(2 * var(--ita-widths-content) + var(--ita-widths-sidebar));
+            --ita-widths-main-container-max: calc(var(--ita-widths-content) + var(--ita-widths-sidebar) + 2 * var(--ita-spacings-9));
         }
         {% if libdocConfig.roundedImagesCorners %}
             main img {
@@ -107,7 +107,6 @@
         fd-column="xs,sm"
         ai-start="md"
         ai-center="xs,sm"
-        pl-5="md"
         style="max-width: var(--ita-widths-main-container-max)">
         <div id="sidebar"
             class="d-flex fd-column | pos-sticky top-0 z-3"
@@ -318,16 +317,16 @@
                     </details>
                 </nav>
                 <h1 class="mt-3 mb-0 | lsp-5 fvs-wght-700 tws-balance {% if pageTitle == page.inputPath %}wb-break-work{% endif %}"
-                    fs-10="md"
-                    fs-9="xs,sm">
+                    fs-8="md"
+                    fs-7="xs,sm">
                     {{ pageTitle }}
                 </h1>
                 {% if pageDescription != '' %}
-                    <p class="d-flex ai-center fw-wrap gap-2 | pt-5 pl-5 pb-5 m-0 | fvs-wght-400 tws-balance fs-7 lsp-3 lh-5 | blwidth-1 blstyle-dashed bcolor-neutral-500"
+                    <p class="d-flex ai-center fw-wrap gap-2 | pt-5 pl-5 pb-5 m-0 | fvs-wght-400 tws-balance fs-5 lsp-3 lh-5 | blwidth-1 blstyle-dashed bcolor-neutral-500"
                         pt-3="xs"
                         pb-3="xs"
-                        fs-6="sm"
-                        fs-5="xs">
+                        fs-4="sm"
+                        fs-3="xs">
                         {{ pageDescription }}
                     </p>
                 {% else %}

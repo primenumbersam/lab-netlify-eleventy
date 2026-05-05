@@ -1,54 +1,65 @@
-# Eleventy LibDoc
+# 📘 중딩용 인공지능 수학 교과서 (AI Math for K-9 Students)
 
-[Eleventy LibDoc website](https://eleventy-libdoc.netlify.app/) | [11ty website](11ty)
+중학생 눈높이에 맞춘 **인공지능 기술의 수학적 기초**를 다루는 디지털 교과서입니다.  
+Eleventy와 LibDoc 테마를 사용하여 빠르고 쾌적한 학습 환경을 제공합니다.
 
-Eleventy LibDoc is an easy to use and content focused starter project for [Eleventy][11ty] to craft slick and responsive documentation. It was was developed with accessibility awareness and low-tech mindset which allows to reach good page speed performances. It contains vanilla JS self-made components like search, primary navigation, table of content, code highlighting and sandboxes. Every page created with LibDoc is printable and can work properly even without Javascript by maintaining only essential features.
+[교과서 바로가기 (Netlify 배포 예정)](https://lab-eleventy-libdoc.netlify.app)
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/d1986dbf-2272-4614-8dec-c228ba4699ef/deploy-status)](https://app.netlify.com/sites/11ty-libdoc-blank/deploys)
+---
 
-![LibDoc’s interface with both light and dark modes](https://github.com/user-attachments/assets/91e7eb6d-8089-40b7-94e4-4fd970073c8d)
+## 🚀 주요 특징 (Key Features)
 
-<img width="1471" height="625" alt="image" src="https://github.com/user-attachments/assets/9af60d6f-8d5b-463e-9570-b5a6e54a8515" />
-<img width="1461" height="617" alt="image" src="https://github.com/user-attachments/assets/f37bbe07-f65a-4a4f-acb1-6892ec202aac" />
+*   **수학 공식 지원 (KaTeX):** LaTeX 문법을 사용하여 복잡한 수학 공식을 깔끔하게 렌더링합니다.
+*   **반응형 디자인:** PC, 태블릿, 모바일 어디서나 최적화된 화면으로 학습할 수 있습니다.
+*   **빠른 검색:** 사이트 내 검색 기능을 통해 필요한 용어나 단원을 바로 찾을 수 있습니다.
+*   **다크 모드 지원:** 사용자 선호에 맞는 색상 테마를 선택할 수 있습니다.
+*   **고성능 & SEO 최적화:** Eleventy(SSG)를 사용하여 페이지 로딩 속도가 매우 빠릅니다.
 
-> [!NOTE]
-> Eleventy LibDoc is still under active development and therefore before reaching v1.0.0:
-> * Full backward compatibility is not guaranteed.
-> * Many features are subject to change.
+---
 
-## Getting started
+## 📚 단원 구성 (Contents)
 
-1. Clone or fork <https://github.com/ita-design-system/eleventy-libdoc>
-2. Run `npm install`
-3. Enter your own settings in `settings.json`. [Configuration](https://eleventy-libdoc.netlify.app/configuration/).
-4. Build `npx @11ty/eleventy --serve` or `npx @11ty/eleventy` (if you already have your own web server).
+1.  **01-정보 윤리:** 인공지능 시대의 윤리와 지적재산권
+2.  **02-자료(디지털 vs 아날로그):** 데이터의 형태와 차이점
+3.  **03-자료(텍스트):** 텍스트 데이터의 요약, 번역, 임베딩
+4.  **04-자료(이미지, 영상):** 행렬로 표현되는 시각 데이터
+5.  **05-자료(수집, 정제, 가공):** 문제 해결을 위한 데이터 구조화
+6.  **06-자료(특성 분류법):** 유사도 측정(유클리드, 자카드, 코사인)
+7.  **07-컴퓨터 알고리즘:** 문제 해결을 위한 명확한 절차
+8.  **08-인공지능 모형 기초:** 퍼셉트론과 신경망의 구조
+9.  **09-인공지능 모형(확률):** 확률적 예측과 선형회귀
 
-[View deployment of this repository](https://11ty-libdoc-blank.netlify.app)
+---
 
-## Key features
+## 🛠 로컬 작업 방법 (Development)
 
-* **Content focused** <br>LibDoc is easy to install, deploy and use.
-* **Accessibility** <br>LibDoc was developed with accessibility awareness.
-* **Performance** <br>Low front-end dependencies and vanilla JS self-made components make LibDoc cross-browser compatibility and good performances. <a href="https://developers.google.com/speed/pagespeed/insights/?url=eleventy-libdoc.netlify.app" target="_blank">View performances</a>.
-* **Search** <br>Fuzzy and standard search modes. Keyboard shortcut 🆂 allows quick focus on search input field. Fuzzy search makes easy keyboard based navigation whereas standard search allows to find an exact match..
-* **Smart navigation** <br>On page change, the primary navigation menu keeps its position.
-* **Smart table of content** <br>In addition of a pure static table of content, LibDoc generates a floating <abbr title="Table of Content">TOC</abbr> always visible that also displays the current window scroll position.
-* **Fallback if no Javascript available** <br>LibDoc can work even without Javascript with reduced features.
-* **Image transcoding** <br>LibDoc transcodes and resizes your source images into production ready formats.
-* **Printable** <br>Every page created with LibDoc can be printed.
-* **Light and dark modes** <br>LibDoc’s interface is available with both light and dark mode color schemes.
-* **Slick code highlighting** <br>Display your code in a nice style and adjust which code languages you really use.
-* **Sandboxes** <br>Showcase small demos or full HTML pages into a responsive dual pane.
-* **Atom feed** <br>The Atom feed allows visitors to subscribe to post blog content.
+프로젝트를 로컬에서 수정하거나 실행하려면 다음 단계를 따르세요.
 
-## Documentation
+1.  **의존성 설치:**
+    ```bash
+    npm install
+    ```
 
-* [LibDoc’s homepage](https://eleventy-libdoc.netlify.app) <br>The website containing LibDocs’s presentation and comprehensive documentation.
-    * [Configuration](https://eleventy-libdoc.netlify.app/configuration/) <br>List and descriptions of every LibDoc parameter.
-    * [Creating content](https://eleventy-libdoc.netlify.app/creating-content/) <br>How LibDoc can display your content in multiple ways.
-    * [Front matter](https://eleventy-libdoc.netlify.app/front-matter/) <br>Documentation of all front matter settings related to a LibDoc page.
-    * [Primary navigation](https://eleventy-libdoc.netlify.app/primary-navigation/) <br>Detailed features of LibDoc’s primary navigation.
-    * [SEO](https://eleventy-libdoc.netlify.app/configuration/seo/) <br>How LibDoc’s configuration and pages parameters are applied for Search Engine Optimization.
-    * [Credits](https://eleventy-libdoc.netlify.app/configuration/credits/) <br>LibDoc could not work without these resources.
+2.  **로컬 서버 실행 (실시간 확인):**
+    ```bash
+    npx @11ty/eleventy --serve
+    ```
 
-[11ty]: https://www.11ty.dev/
+3.  **정적 파일 빌드:**
+    ```bash
+    npx @11ty/eleventy
+    ```
+
+---
+
+## 🎨 스타일 및 너비 설정
+
+*   **본문 너비 조절:** `core/assets/css/ds.css` 내 `--ita-widths-content` 값 수정
+*   **제목 폰트 크기:** `_includes/libdoc_page.liquid` 및 `core/assets/css/ds__defaults.css` 수정
+*   **기타 설정:** `settings.json`에서 사이트 제목 및 메타데이터 관리
+
+---
+
+## 📄 라이선스
+본 프로젝트는 **Eleventy LibDoc** 스타터 키트를 기반으로 제작되었습니다.  
+콘텐츠 저작권은 저작자에게 있습니다.

@@ -1,32 +1,25 @@
 {
-    "siteTitle": "My Project Title",
-    "siteDescription": "This is the description of my project title",
-    "author": "John Doe",
-    "faviconUrl": "/assets/myfavicon.png",
-    "blogTitle": "Blog",
-    "blogDescription": "Here is the description of the blog part",
-    "productionUrl": "https://eleventy-libdoc.netlify.app",
+    "siteTitle": "AI기술 기초수학",
+    "siteDescription": "AI기술 이해를 위한 중딩용 수학교과서",
+    "author": "gitsam",
+    "faviconUrl": "/assets/favicon.png",
+    "openGraphImage": "/assets/cover.png",
+    "blogTitle": "인공지능수학 중딩용 교과서",
+    "blogDescription": "중학생 눈높이에 맞춘 AI기술 수학 교과서",
+    "productionUrl": "https://lab-eleventy-libdoc.netlify.app",
     "customLinks": [
         {
-            "url": "/feed.xml",
-            "text": "Atom feed"
-        },
-        {
-            "url": "https://github.com/ita-design-system/eleventy-libdoc",
+            "url": "https://github.com/primenumbersam/lab-netlify-eleventy",
             "text": "GitHub"
         },
         {
-            "url": "#",
-            "text": "Bluesky"
+            "url": "https://blog.naver.com/primenumbersam",
+            "text": "Naver"
         },
         {
-            "url": "#",
-            "text": "LinkedIn"
-        },
-        {
-            "url": "#",
-            "text": "CodePen"
+            "url": "/feed.xml",
+            "text": "Atom feed"
         }
     ],
-    "editThisPageRootUrl": "https://github.com/ita-design-system/eleventy-libdoc/blob/main"
+    "editThisPageRootUrl": "https://github.com/primenumbersam/lab-netlify-eleventy"
 }

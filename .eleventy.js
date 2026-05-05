@@ -4,6 +4,8 @@ import { InputPathToUrlTransformPlugin }    from "@11ty/eleventy";
 import { eleventyImageTransformPlugin }     from "@11ty/eleventy-img";
 import { EleventyHtmlBasePlugin }           from "@11ty/eleventy";
 import pluginRss                            from "@11ty/eleventy-plugin-rss";
+import markdownIt                             from "markdown-it";
+import markdownItKatex                        from "markdown-it-katex";
 // END 11TY imports
 
 // START LibDoc imports
@@ -19,6 +21,16 @@ export default function(eleventyConfig) {
     eleventyConfig.addPlugin(eleventyImageTransformPlugin, libdocFunctions.pluginsParameters.eleventyImageTransform());
     eleventyConfig.addPlugin(pluginRss);
     // END PLUGINS
+
+    // START MARKDOWN
+    const mdOptions = {
+        html: true,
+        breaks: true,
+        linkify: true
+    };
+    const markdownLib = markdownIt(mdOptions).use(markdownItKatex);
+    eleventyConfig.setLibrary("md", markdownLib);
+    // END MARKDOWN
 
     // START FILTERS
     eleventyConfig.addAsyncFilter("autoids", libdocFunctions.filters.autoids);
@@ -48,10 +60,8 @@ export default function(eleventyConfig) {
     // END SHORTCODES
 
     // START FILE COPY
-	eleventyConfig.addPassthroughCopy("sandboxes");
     eleventyConfig.addPassthroughCopy("assets");
     eleventyConfig.addPassthroughCopy("core/assets");
-    eleventyConfig.addPassthroughCopy("favicon.png");
     // END FILE COPY
     
     return {

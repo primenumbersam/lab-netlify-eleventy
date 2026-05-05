@@ -2,7 +2,7 @@
     --libdoc-container-width: var(--ita-widths-content);
     --libdoc-font-family: "Recursive", "fallbackFont";
     --libdoc-damier: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAAAHElEQVR4AWP4jwOcwQFoo2FUAy4JXAbRRMOoBgCE0rCfubvZNQAAAABJRU5ErkJggg==');
-    --libdoc-soft-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+    --libdoc-soft-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
     --libdoc-long-shadow:
         1px 1px 2px rgba(49, 49, 49, 0.08),
         5px 6px 9px rgba(49, 49, 49, 0.26),
@@ -19,39 +19,47 @@
 
 /* BROWSERS DEFAULTS */
 /* <details> défaut style on iOS */
-details > summary::-webkit-details-marker {
+details>summary::-webkit-details-marker {
     display: none;
 }
-details:not([open]) > summary .icons span[class*="icon-"]:nth-child(2) {
+
+details:not([open])>summary .icons span[class*="icon-"]:nth-child(2) {
     display: none;
 }
-details[open] > summary .icons span[class*="icon-"]:nth-child(1) {
+
+details[open]>summary .icons span[class*="icon-"]:nth-child(1) {
     display: none;
 }
+
 /* <button> and <select> default style on iOS */
-select, button {
+select,
+button {
     color: black
 }
+
 /* Opacity disabled input on iOS */
 input:disabled {
     opacity: 1;
 }
+
 input::placeholder {
     letter-spacing: -0.04em;
 }
+
 /* input type search reset */
 input[type="search"]::-webkit-search-decoration,
 input[type="search"]::-webkit-search-cancel-button,
 input[type="search"]::-webkit-search-results-button,
 input[type="search"]::-webkit-search-results-decoration {
-    -webkit-appearance:none;
+    -webkit-appearance: none;
 }
 
 /* MENU TOGGLE */
-#nav_small_devices:has(#nav_primary_checkbox:checked) ~ #nav_primary_container {
+#nav_small_devices:has(#nav_primary_checkbox:checked)~#nav_primary_container {
     display: flex !important;
 }
-#nav_primary_checkbox:checked ~ label [class*="icon-"]::before {
+
+#nav_primary_checkbox:checked~label [class*="icon-"]::before {
     content: '\e910';
 }
 
@@ -63,12 +71,14 @@ input[type="search"]::-webkit-search-results-decoration {
 * {
     box-sizing: border-box;
 }
+
 body,
 input,
 code,
 button {
     font-family: var(--libdoc-font-family);
 }
+
 body {
     font-optical-sizing: auto;
     font-weight: 300;
@@ -77,44 +87,49 @@ body {
     font-variation-settings: "slnt" 0, "CASL" 0, "CRSV" 0, "MONO" 0, "wght" 360;
     letter-spacing: -0.01em;
 }
+
 html,
 .o-auto {
     scrollbar-width: 10px;
 }
+
 button:disabled {
     opacity: 0.5;
     cursor: default;
 }
+
 input:focus {
     outline-width: 3px;
     outline-style: solid;
     outline-offset: -1px;
     box-shadow: var(--libdoc-soft-shadow);
 }
+
 code {
     font-variation-settings: "slnt" 0, "CASL" 0, "CRSV" 0.0, "MONO" 1, "wght" 300;
     line-height: 1.6em;
     font-size: var(--ita-fontSizes-4);
 }
+
 /* MAIN CONTENT */
 main *::selection {
     background-color: var(--ita-colors-primary-500);
     color: var(--ita-colors-primary-100);
 }
-main > * {
+
+main>* {
     display: block;
     width: 100%;
     /* max-width: calc(var(--libdoc-container-width) + 2 * var(--ita-spacings-9)); */
-    max-width: clamp(
-        calc(var(--ita-widths-content) - 200px),
-        calc(100% - 3 * var(--ita-spacings-5)),
-        calc(var(--ita-widths-content) + 2 * var(--ita-spacings-9))
-    );
-    margin-left: auto;
+    max-width: clamp(calc(var(--ita-widths-content) - 200px),
+            calc(100% - 3 * var(--ita-spacings-5)),
+            calc(var(--ita-widths-content) + 2 * var(--ita-spacings-9)));
+    margin-left: 0;
     margin-right: auto;
     padding-left: var(--ita-spacings-9);
     padding-right: var(--ita-spacings-9);
 }
+
 /* main > header p,
 main > header summary {
     text-shadow: var(--libdoc-text-shadow-legibility);
@@ -123,6 +138,7 @@ main p {
     /* text-shadow: var(--libdoc-text-shadow-legibility); */
     line-height: 1.6em;
 }
+
 /* HEADINGS */
 main h1,
 main h2,
@@ -134,89 +150,102 @@ main h6 {
     scroll-margin-top: var(--ita-spacings-6);
     text-wrap-style: balance;
 }
+
 main h1 {
     font-variation-settings: "wght" 800, "MONO" 0, "CASL" 0, "CRSV" 0.0;
-    font-size: var(--ita-fontSizes-9);
+    font-size: var(--ita-fontSizes-7);
     letter-spacing: -0.06em;
 }
+
 main h2 {
     font-variation-settings: "wght" 700, "MONO" 0, "CASL" 0, "CRSV" 0.0;
-    font-size: var(--ita-fontSizes-9);
+    font-size: var(--ita-fontSizes-7);
     letter-spacing: -0.06em;
 }
+
 main h3 {
     font-variation-settings: "wght" 800, "MONO" 0, "CASL" 0, "CRSV" 0.0;
-    font-size: var(--ita-fontSizes-8);
+    font-size: var(--ita-fontSizes-6);
     letter-spacing: -0.05em;
 }
+
 main h4 {
     font-variation-settings: "wght" 700, "MONO" 0, "CASL" 0, "CRSV" 0.0;
-    font-size: var(--ita-fontSizes-8);
+    font-size: var(--ita-fontSizes-6);
     letter-spacing: -0.05em;
 }
+
 main h5 {
     font-variation-settings: "wght" 800, "MONO" 0, "CASL" 0, "CRSV" 0.0;
-    font-size: var(--ita-fontSizes-7);
+    font-size: var(--ita-fontSizes-5);
     letter-spacing: -0.05em;
 }
+
 main h6 {
     font-variation-settings: "wght" 700, "MONO" 0, "CASL" 0, "CRSV" 0.0;
-    font-size: var(--ita-fontSizes-7);
+    font-size: var(--ita-fontSizes-5);
     letter-spacing: -0.05em;
 }
-main > *:not(header) h1,
-main > *:not(header) h1,
-main > *:not(header) h2,
-main > *:not(header) h2,
-main > *:not(header) h3,
-main > *:not(header) h3,
-main > *:not(header) h4,
-main > *:not(header) h4,
-main > *:not(header) h5,
-main > *:not(header) h5,
-main > *:not(header) h6,
-main > *:not(header) h6 {
+
+main>*:not(header) h1,
+main>*:not(header) h1,
+main>*:not(header) h2,
+main>*:not(header) h2,
+main>*:not(header) h3,
+main>*:not(header) h3,
+main>*:not(header) h4,
+main>*:not(header) h4,
+main>*:not(header) h5,
+main>*:not(header) h5,
+main>*:not(header) h6,
+main>*:not(header) h6 {
     margin: 0;
     padding-left: 0 !important;
     line-height: 1.2em;
     display: inline-flex;
 }
-main > *:not(header) h1,
-main > *:not(header) h1 {
+
+main>*:not(header) h1,
+main>*:not(header) h1 {
     font-size: var(--ita-fontSizes-7);
 }
-main > *:not(header) h2,
-main > *:not(header) h2 {
+
+main>*:not(header) h2,
+main>*:not(header) h2 {
     font-size: var(--ita-fontSizes-6);
 }
-main > *:not(header) h3,
-main > *:not(header) h3,
-main > *:not(header) h4,
-main > *:not(header) h4,
-main > *:not(header) h5,
-main > *:not(header) h5,
-main > *:not(header) h6,
-main > *:not(header) h6 {
+
+main>*:not(header) h3,
+main>*:not(header) h3,
+main>*:not(header) h4,
+main>*:not(header) h4,
+main>*:not(header) h5,
+main>*:not(header) h5,
+main>*:not(header) h6,
+main>*:not(header) h6 {
     font-size: var(--ita-fontSizes-5);
 }
-main > *:not(header) h1 a,
-main > *:not(header) h1 a,
-main > *:not(header) h2 a,
-main > *:not(header) h2 a,
-main > *:not(header) h3 a,
-main > *:not(header) h3 a,
-main > *:not(header) h4 a,
-main > *:not(header) h4 a,
-main > *:not(header) h5 a,
-main > *:not(header) h5 a,
-main > *:not(header) h6 a,
-main > *:not(header) h6 a {
+
+main>*:not(header) h1 a,
+main>*:not(header) h1 a,
+main>*:not(header) h2 a,
+main>*:not(header) h2 a,
+main>*:not(header) h3 a,
+main>*:not(header) h3 a,
+main>*:not(header) h4 a,
+main>*:not(header) h4 a,
+main>*:not(header) h5 a,
+main>*:not(header) h5 a,
+main>*:not(header) h6 a,
+main>*:not(header) h6 a {
     display: none;
 }
+
 /* LINKS */
 main a {
     transition: all 300ms;
 }
+
 main a:link,
 main a:visited {
     font-variation-settings: "wght" 500, "MONO" 0;
@@ -225,13 +254,16 @@ main a:visited {
     text-underline-offset: 0.2em;
     text-decoration-thickness: 0.1em;
 }
+
 main a:hover {
     font-variation-settings: "wght" 700, "MONO" 0;
 }
+
 main a[aria-current="page"] {
     opacity: 0.5;
     pointer-events: none;
 }
+
 main a[href^="https://"]:not([href^="https://eleventy-libdoc"])::after,
 main a.__external-link::after {
     content: '';
@@ -248,28 +280,34 @@ main a.__external-link::after {
     float: none;
     transition: color 300ms;
 }
+
 /* EMPHASIS */
 main em {
     font-variation-settings: "slnt" -8, "wght" 400;
     letter-spacing: -0.02em;
 }
+
 main strong,
 main b {
     font-variation-settings: "wght" 700, "MONO" 0;
     letter-spacing: -0.03em;
 }
+
 main i {
     font-variation-settings: "slnt" -15, "MONO" 0;
 }
+
 /* MARKING AND SPECIALS */
 main s,
 main strike {
     text-decoration-thickness: 0.05em;
     text-decoration-style: wavy;
 }
+
 main del * {
     max-width: var(--libdoc-container-width);
 }
+
 main samp {
     font-family: var(--libdoc-font-family);
     font-variation-settings: "MONO" 1, "CASL" 0, "CRSV" 0, "wght" 400;
@@ -277,58 +315,69 @@ main samp {
     border-radius: 3px;
     padding: 0em 0.3em;
 }
+
 main q {
     font-variation-settings: "slnt" -15, "CRSV" 1, "CASL" 1, "wght" 400;
 }
+
 main kbd {
     font-variation-settings: "MONO" 1, "CASL" 0, "CRSV" 0, "wght" 300;
     font-family: var(--libdoc-font-family);
     padding: 0 var(--ita-spacings-2);
     border-radius: 4px;
 }
+
 /* LISTS */
 main ul,
 main ol {
     line-height: 1.6em;
 }
-main > ol:not(:has(ul)) ol {
+
+main>ol:not(:has(ul)) ol {
     padding-left: var(--ita-spacings-3);
 }
-main > ul,
-main > ul ul {
+
+main>ul,
+main>ul ul {
     list-style: none;
     margin-top: 0;
 }
-main > ol:not(:has(ul)),
-main > ol:not(:has(ul)) li > ol {
+
+main>ol:not(:has(ul)),
+main>ol:not(:has(ul)) li>ol {
     counter-reset: listItem;
     list-style: none;
     margin-top: 1em;
 }
-main > ol > li + li,
-main > ol li > ol > li + li {
+
+main>ol>li+li,
+main>ol li>ol>li+li {
     padding-top: 1em;
 }
-main > ol:not(:has(ul)) > li,
-main > ol:not(:has(ul)) li > ol > li {
+
+main>ol:not(:has(ul))>li,
+main>ol:not(:has(ul)) li>ol>li {
     counter-increment: listItem;
     padding-left: var(--ita-spacings-7);
     border-left-width: 1px;
     border-left-style: dashed;
 }
-main > ul li > p:first-child,
-main > ol li > p:first-child {
+
+main>ul li>p:first-child,
+main>ol li>p:first-child {
     margin-top: 0;
 }
-main > ul li > p:last-child,
-main > ol li > p:last-child {
+
+main>ul li>p:last-child,
+main>ol li>p:last-child {
     margin-bottom: 0;
 }
+
 /* 
 https://www.joshwcomeau.com/css/styling-ordered-lists-with-css-counters/
 */
-main > ol:not(:has(ul)) > li::before,
-main > ol:not(:has(ul)) li > ol > li::before {
+main>ol:not(:has(ul))>li::before,
+main>ol:not(:has(ul)) li>ol>li::before {
     content: counters(listItem, '.') '.';
     position: absolute;
     transform: translateX(calc(-100% - var(--ita-spacings-4)));
@@ -343,34 +392,40 @@ main > ol:not(:has(ul)) li > ol > li::before {
     border-bottom-width: 1px;
     border-bottom-style: dashed;
 }
-main > ol:not(:has(ul)) > li {
+
+main>ol:not(:has(ul))>li {
     border-left-width: 1px;
     border-left-style: dashed;
 }
-main > ol:not(:has(ul)) > li::before {
+
+main>ol:not(:has(ul))>li::before {
     margin-top: 0;
     padding: 0.2em 1em;
     border-radius: 100px;
     border: none;
 }
-main > ul {
+
+main>ul {
     padding-left: var(--ita-spacings-9);
 }
-main > ul ul {
+
+main>ul ul {
     padding-left: 0;
 }
-main > ul > li,
-main > ul ul > li,
-main > ol ul > li {
+
+main>ul>li,
+main>ul ul>li,
+main>ol ul>li {
     border-left-width: 1px;
     border-left-style: dashed;
     position: relative;
     padding-left: var(--ita-spacings-8);
     padding-top: 0.5em;
 }
-main > ul > li::before,
-main > ul ul > li::before,
-main > ol ul > li::before {
+
+main>ul>li::before,
+main>ul ul>li::before,
+main>ol ul>li::before {
     content: '';
     position: absolute;
     top: 1.3em;
@@ -379,9 +434,10 @@ main > ol ul > li::before {
     border-bottom-width: 1px;
     border-bottom-style: dashed;
 }
-main > ul > li::after,
-main > ul ul > li::after,
-main > ol ul > li::after {
+
+main>ul>li::after,
+main>ul ul>li::after,
+main>ol ul>li::after {
     content: '';
     position: absolute;
     top: calc(1.3em - var(--ita-spacings-2) / 2);
@@ -390,37 +446,44 @@ main > ol ul > li::after {
     height: var(--ita-spacings-2);
     border-radius: 100%;
 }
+
 /* Mixed list type */
-main > ol:has(ul) ul {
+main>ol:has(ul) ul {
     list-style: none;
     padding-left: 0;
     margin-top: 0.5em;
 }
-main > ol:has(ul) ol {
+
+main>ol:has(ul) ol {
     padding-left: var(--ita-spacings-7);
 }
-main > ol:has(ul) li > ol,
-main > ol:has(ul) li > ol > li + li,
-main > ul:has(ol) li > ol,
-main > ul:has(ol) li > ol > li + li {
+
+main>ol:has(ul) li>ol,
+main>ol:has(ul) li>ol>li+li,
+main>ul:has(ol) li>ol,
+main>ul:has(ol) li>ol>li+li {
     margin-top: 0.5em;
     padding-top: 0;
 }
-main > ul:has(ol) ol {
+
+main>ul:has(ol) ol {
     padding-left: var(--ita-spacings-5);
     margin-top: 0.5em;
 }
-main > ol:has(ul) {
+
+main>ol:has(ul) {
     list-style: none;
     counter-reset: mixedItem;
 }
-main > ol:has(ul) > li {
+
+main>ol:has(ul)>li {
     counter-increment: mixedItem;
     padding-left: var(--ita-spacings-6);
     border-left-width: 1px;
     border-left-style: dashed;
 }
-main > ol:has(ul) > li:before  {
+
+main>ol:has(ul)>li:before {
     content: counter(mixedItem) '.';
     position: absolute;
     transform: translateY(-3px) translateX(calc(-100% - var(--ita-spacings-2)));
@@ -430,35 +493,40 @@ main > ol:has(ul) > li:before  {
     padding: 0.2em 1em;
     border-radius: 100px;
 }
-main > *:not(header) li::marker {
+
+main>*:not(header) li::marker {
     font-variation-settings: "wght" 500, "MONO" 1, "CASL" 1;
     font-size: var(--ita-fontSizes-3);
 }
 
 /* CODE AND SYNTAX HIGHLIGHTING */
-main > *:not(pre) code {
+main>*:not(pre) code {
     display: inline-block;
     padding-left: 0.3em;
     padding-right: 0.3em;
     border-radius: 0.3em;
     font-variation-settings: "wght" 400, "MONO" 1, "CASL" 0, "CRSV" 0;
 }
+
 /* language not supported in highlight js */
 main pre:not(:has(.hljs)) {
     overflow: auto;
 }
-main > pre {
+
+main>pre {
     padding: var(--ita-spacings-9);
     border-radius: 12px;
     border-width: 1px;
     border-style: solid;
     overflow: hidden;
 }
-main > pre > code {
+
+main>pre>code {
     border-radius: 6px;
     box-shadow: var(--libdoc-long-shadow-alt);
 }
-main > pre > code::before {
+
+main>pre>code::before {
     content: attr(data-language-name);
     display: block;
     padding-bottom: var(--ita-spacings-2);
@@ -468,16 +536,19 @@ main > pre > code::before {
     font-size: var(--ita-fontSizes-3);
     font-variation-settings: "wght" 500;
 }
+
 /* TABLES */
-main > .table-wrapper + .table-wrapper {
+main>.table-wrapper+.table-wrapper {
     margin-top: 2em;
 }
+
 main table {
     display: table;
     width: 100%;
     border-collapse: collapse;
     max-width: var(--libdoc-container-width);
 }
+
 main table thead th {
     text-align: left;
     font-variation-settings: "wght" 700, "MONO" 0;
@@ -486,6 +557,7 @@ main table thead th {
     border-width: 1px;
     border-style: solid;
 }
+
 main table tbody tr td {
     padding: var(--ita-spacings-3);
     font-size: var(--ita-fontSizes-3);
@@ -494,9 +566,11 @@ main table tbody tr td {
     font-variation-settings: "wght" 400, "MONO" 0;
     line-height: 1.5em;
 }
+
 main table td code {
     font-size: var(--ita-fontSizes-3);
 }
+
 /* QUOTES */
 main blockquote {
     position: relative;
@@ -506,12 +580,15 @@ main blockquote {
     font-family: var(--libdoc-font-family);
     font-size: var(--ita-fontSizes-7);
 }
-main blockquote > *:first-child {
+
+main blockquote>*:first-child {
     margin-top: 0;
 }
-main blockquote > *:last-child {
+
+main blockquote>*:last-child {
     margin-bottom: 0;
 }
+
 main blockquote::before {
     content: "❝";
     position: absolute;
@@ -529,23 +606,28 @@ main blockquote::before {
     border-style: double;
     border-radius: 12px;
 }
+
 main blockquote * {
     position: relative;
     font-variation-settings: "slnt" -15, "CASL" 1, "CRSV" 1;
     letter-spacing: -0.01em;
 }
+
 main blockquote em {
     font-variation-settings: "slnt" -15, "CASL" 1, "CRSV" 1, "wght" 500;
 }
+
 main blockquote strong {
     font-variation-settings: "slnt" -15, "CASL" 1, "CRSV" 1, "wght" 700;
 }
+
 /* DEFINITION LISTS */
 main dl dt {
     font-variation-settings: "wght" 500, "MONO" 0;
     margin-bottom: 0.2em;
     letter-spacing: -0.04em;
 }
+
 main dl dd {
     margin-left: var(--ita-spacings-2);
     margin-bottom: 1em;
@@ -554,9 +636,10 @@ main dl dd {
     border-left-width: 1px;
     border-left-style: dashed;
 }
+
 /* DETAILS */
-main > details summary,
-main > *:not(header) details summary {
+main>details summary,
+main>*:not(header) details summary {
     font-variation-settings: "wght" 400, "MONO" 0;
     display: flex;
     align-items: center;
@@ -565,8 +648,9 @@ main > *:not(header) details summary {
     letter-spacing: -0.03em;
     cursor: pointer;
 }
-main > details summary::before,
-main > *:not(header) details summary::before {
+
+main>details summary::before,
+main>*:not(header) details summary::before {
     content: '';
     background-color: currentColor;
     mask-image: url('/core/assets/icons/plus-circle.svg');
@@ -579,30 +663,35 @@ main > *:not(header) details summary::before {
     display: inline-flex;
     font-size: var(--ita-fontSizes-6);
 }
-main > details[open] summary::before,
-main > *:not(header) details[open] summary::before {
+
+main>details[open] summary::before,
+main>*:not(header) details[open] summary::before {
     mask-image: url('/core/assets/icons/minus-circle.svg');
 }
-main > details:has(+ details) summary,
-main > details + details summary,
-main > *:not(header) details:has(+ details) summary,
-main > *:not(header) details + details summary {
+
+main>details:has(+ details) summary,
+main>details+details summary,
+main>*:not(header) details:has(+ details) summary,
+main>*:not(header) details+details summary {
     padding: 1em 0;
     border-bottom-width: 1px;
     border-bottom-style: dashed;
 }
-main > details[open]:has(+ details) summary,
-main > details + details[open] summary,
-main > *:not(header) details[open]:has(+ details) summary,
-main > *:not(header) details + details[open] summary {
+
+main>details[open]:has(+ details) summary,
+main>details+details[open] summary,
+main>*:not(header) details[open]:has(+ details) summary,
+main>*:not(header) details+details[open] summary {
     border-bottom: none;
 }
+
 /* HORIZONTAL RULE */
 main hr {
     border: none;
     margin-top: 3em;
     margin-bottom: 3em;
 }
+
 main hr::before {
     content: "";
     display: block;
@@ -610,12 +699,14 @@ main hr::before {
     border-bottom-width: 1px;
     border-bottom-style: dashed;
 }
+
 /* IMAGES */
 main img {
     max-width: 100%;
     height: auto;
     position: relative;
 }
+
 main figure {
     display: flex;
     flex-direction: column;
@@ -628,50 +719,62 @@ main figure {
     border-style: solid;
     overflow: hidden;
 }
+
 main figure.long-shadow {
     row-gap: 2em;
 }
+
 main figure.long-shadow img,
 main picture:has(.long-shadow) img {
     box-shadow: var(--libdoc-long-shadow);
 }
+
 main figure figcaption {
     font-size: var(--ita-fontSizes-4);
     font-variation-settings: "slnt" -5, "CASL" 0, "CRSV" 1.0, "MONO" 0, "wght" 300;
     line-height: 1.5em;
 }
+
 main figure.wide,
 main picture:has(.wide) {
     max-width: calc(100% - 2 * var(--ita-spacings-8));
 }
+
 /* VIDEO */
 main video {
     padding: 0;
     max-width: var(--libdoc-container-width);
 }
+
 /* INLINE HTML */
 main time {
     font-variation-settings: "slnt" 0, "CASL" 0, "CRSV" 0, "MONO" 0, "wght" 400;
     letter-spacing: -0.02em;
 }
+
 main var {
     font-variation-settings: "slnt" 0, "CASL" 0, "CRSV" 0, "MONO" 1, "wght" 400;
     letter-spacing: -0.04em;
 }
+
 main p:has(small) {
     line-height: 1em;
 }
+
 main small {
     font-size: var(--ita-fontSizes-3);
     font-variation-settings: "slnt" 0, "CASL" 0, "CRSV" 0, "MONO" 0;
 }
+
 main u {
     text-decoration-style: wavy;
     text-decoration-color: var(--ita-colors-danger-500);
 }
+
 main img.long-shadow {
     margin-bottom: 2em;
 }
+
 main abbr[title] {
     cursor: pointer;
     /* Safari hack */
@@ -679,12 +782,15 @@ main abbr[title] {
     text-decoration: underline;
     text-decoration: underline dotted;
 }
+
 main abbr[title].expanded::after {
     content: " (" attr(title) ")";
 }
+
 main abbr[data-title].expanded::after {
     content: " (" attr(data-title) ")";
 }
+
 main a.btn,
 main button[type="button"].btn {
     display: inline-flex;
@@ -704,29 +810,34 @@ main button[type="button"].btn {
     transition: all 300ms;
     white-space: nowrap;
 }
+
 main a.btn:hover,
 main button[type="button"].btn:hover {
     border-style: dotted;
 }
+
 main a.btn:active,
 main button[type="button"].btn:active {
     border-style: solid;
     scale: 0.95;
 }
+
 /* EMBEDS */
-main > iframe {
+main>iframe {
     aspect-ratio: 2.06;
     width: 100%;
     height: auto;
     border: none;
 }
-main > aside > iframe {
+
+main>aside>iframe {
     width: 100%;
     aspect-ratio: 16/9;
     border-radius: 9px;
     overflow: hidden;
     box-shadow: var(--libdoc-long-shadow);
 }
+
 /* ALERTS */
 main .alert {
     font-variation-settings: "wght" 400, "slnt" 0, "CASL" 0, "CRSV" 0;
@@ -737,6 +848,7 @@ main .alert {
     letter-spacing: -0.01em;
     line-height: 1.6em;
 }
+
 main .alert[data-title]::before {
     content: attr(data-title);
     display: block;
@@ -748,11 +860,18 @@ main .alert[data-title]::before {
     border-bottom-style: dashed;
     border-bottom-width: 1px;
 }
+
 /* SEARCH OCCURRENCES */
 @keyframes flash {
-    50% { background-color: #BF0 }
-    100% { background-color: inherit }
+    50% {
+        background-color: #BF0
+    }
+
+    100% {
+        background-color: inherit
+    }
 }
+
 main .__search-occurrence {
     outline-width: 2px;
     outline-style: dashed;
@@ -772,6 +891,7 @@ main .__search-occurrence {
     min-width: var(--ita-spacings-5);
     order: -2;
 }
+
 #nav_primary .nav_primary__anchor::after,
 .nav_primary .nav_primary__anchor::after,
 #nav_primary_blog_link::after {
@@ -785,22 +905,26 @@ main .__search-occurrence {
     border-radius: 100%;
     transform: translateX(calc(-50% + 1px));
 }
-#nav_primary > ol > li ol li,
-.nav_primary > ol > li ol li {
+
+#nav_primary>ol>li ol li,
+.nav_primary>ol>li ol li {
     border-left-width: 1px;
     border-left-style: dashed;
 }
-#nav_primary > ol > li > a.nav_primary__anchor,
-.nav_primary > ol > li > a.nav_primary__anchor {
+
+#nav_primary>ol>li>a.nav_primary__anchor,
+.nav_primary>ol>li>a.nav_primary__anchor {
     font-size: var(--ita-fontSizes-4);
     letter-spacing: -0.04em;
 }
-#nav_primary > ol > li > ol > li a.nav_primary__anchor,
-.nav_primary > ol > li > ol > li a.nav_primary__anchor {
+
+#nav_primary>ol>li>ol>li a.nav_primary__anchor,
+.nav_primary>ol>li>ol>li a.nav_primary__anchor {
     font-variation-settings: "wght" 400, "MONO" 0, "CASL" 0, "CRSV" 0, "slnt" 0;
 }
-#nav_primary > ol > li > ol > li a.nav_primary__anchor::after,
-.nav_primary > ol > li > ol > li a.nav_primary__anchor::after {
+
+#nav_primary>ol>li>ol>li a.nav_primary__anchor::after,
+.nav_primary>ol>li>ol>li a.nav_primary__anchor::after {
     width: var(--ita-spacings-1);
     min-width: var(--ita-spacings-1);
 }
@@ -809,16 +933,20 @@ main .__search-occurrence {
 #toc_main {
     text-wrap-style: balance;
 }
-#toc_main[open] > summary {
+
+#toc_main[open]>summary {
     border-bottom: none;
 }
-#toc_main[open] > summary .icon-plus-circle,
-#toc_main:not([open]) > summary .icon-minus-circle {
+
+#toc_main[open]>summary .icon-plus-circle,
+#toc_main:not([open])>summary .icon-minus-circle {
     display: none;
 }
+
 #toc_main li {
     break-inside: avoid;
 }
+
 #toc_main li a {
     text-decoration-color: var(--ita-colors-primary-300);
 }
@@ -829,27 +957,34 @@ main .__search-occurrence {
     margin-left: auto;
     margin-right: auto;
 }
+
 .sandbox .sandbox__code {
     min-height: 500px;
 }
+
 .sandbox .sandbox__resizer {
     width: 20px;
 }
+
 .sandbox .sandbox__resizer:active,
 .sandbox .sandbox__resizer:hover {
     cursor: col-resize;
 }
+
 .sandbox .sandbox__enable_wrapper {
     opacity: 0;
     transition: opacity 300ms;
 }
+
 .sandbox .sandbox__enable_wrapper:hover {
     opacity: 1;
 }
+
 .sandbox:has(.sandbox__enable_switch:checked) .sandbox__enable_wrapper {
     display: none;
 }
-.sandbox + .sandbox {
+
+.sandbox+.sandbox {
     margin-top: 2em;
 }
 
@@ -857,13 +992,16 @@ main .__search-occurrence {
 #floating_toc[open] summary [class*="icon-"]::before {
     content: '\e910'
 }
+
 #floating_toc a {
     transition: all 300ms;
     max-width: 80vw;
 }
+
 #floating_toc a:hover {
     font-variation-settings: "wght" 700, "MONO" 0;
 }
+
 #floating_toc__list_parent::before {
     content: '';
     display: flex;
@@ -885,12 +1023,12 @@ main .__search-occurrence {
 }
 
 /* WIDGETS */
-main .widget + .widget {
+main .widget+.widget {
     margin-top: var(--ita-spacings-5);
 }
 
 /* INPUT RADIOS */
-input[type="radio"] ~ label::before {
+input[type="radio"]~label::before {
     content: '';
     min-width: 1em;
     max-width: 1em;
@@ -902,13 +1040,13 @@ input[type="radio"] ~ label::before {
 }
 
 /* USER PREFERENCES */
-#user_preferences[open] > summary::after {
-  content: '';
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  height: var(--ita-spacings-3);
-  border-left: 1px dashed var(--ita-colors-neutral-500);
+#user_preferences[open]>summary::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    height: var(--ita-spacings-3);
+    border-left: 1px dashed var(--ita-colors-neutral-500);
 }
 
 /* RESPONSIVE MD */
@@ -917,99 +1055,123 @@ input[type="radio"] ~ label::before {
         /* Limit floating TOC left position */
         right: clamp(var(--ita-spacings-5), 100%, calc(50% - var(--ita-widths-content) - var(--ita-widths-content) / 2));
     }
+
     #floating_toc__list {
         width: 200px;
         max-height: calc(100vh - 160px);
     }
 }
+
 /* RESPONSIVE XS + SM */
 @media (max-width: 959px) {
     body {
         font-size: var(--ita-fontSizes-4);
     }
+
     code,
-    main > pre > code::before {
+    main>pre>code::before {
         font-size: var(--ita-fontSizes-2);
     }
-    main > * {
+
+    main>* {
         max-width: calc(var(--libdoc-container-width) + 2 * var(--ita-spacings-5));
         padding-left: var(--ita-spacings-5);
         padding-right: var(--ita-spacings-5);
     }
+
     main h1,
     main h2 {
-        font-size: var(--ita-fontSizes-8);
+        font-size: var(--ita-fontSizes-5);
     }
+
     main h3,
     main h4 {
-        font-size: var(--ita-fontSizes-7);
+        font-size: var(--ita-fontSizes-5);
         letter-spacing: -0.05em;
     }
+
     main h5,
     main h6 {
-        font-size: var(--ita-fontSizes-6);
+        font-size: var(--ita-fontSizes-4);
     }
-    main > ul {
+
+    main>ul {
         padding-left: var(--ita-spacings-5);
     }
-    main > ol {
+
+    main>ol {
         padding-left: var(--ita-spacings-6);
     }
-    main > ul > li,
-    main > ul ul > li {
+
+    main>ul>li,
+    main>ul ul>li {
         padding-left: var(--ita-spacings-7);
     }
-    main > ul > li::before,
-    main > ul ul > li::before {
+
+    main>ul>li::before,
+    main>ul ul>li::before {
         width: var(--ita-spacings-3);
     }
-    main > ul > li::after,
-    main > ul ul > li::after {
+
+    main>ul>li::after,
+    main>ul ul>li::after {
         left: var(--ita-spacings-3);
     }
-    main > ol:not(:has(ul)) > li,
-    main > ol:not(:has(ul)) li > ol > li {
+
+    main>ol:not(:has(ul))>li,
+    main>ol:not(:has(ul)) li>ol>li {
         padding-left: var(--ita-spacings-5);
     }
-    main > ol:not(:has(ul)) > li::before,
-    main > ol:not(:has(ul)) li > ol > li::before {
+
+    main>ol:not(:has(ul))>li::before,
+    main>ol:not(:has(ul)) li>ol>li::before {
         font-size: var(--ita-fontSizes-1);
         transform: translateX(calc(-100% - var(--ita-spacings-2)));
     }
-    main > ul:has(ol) ol {
+
+    main>ul:has(ol) ol {
         padding-left: var(--ita-spacings-3);
     }
-    main > ol:has(ul) ol {
+
+    main>ol:has(ul) ol {
         padding-left: var(--ita-spacings-5);
     }
-    main > ol:has(ul) > li:before {
+
+    main>ol:has(ul)>li:before {
         font-size: var(--ita-fontSizes-1);
         transform: translateX(calc(-100% - var(--ita-spacings-3)));
     }
-    main > *:not(header) li::marker {
+
+    main>*:not(header) li::marker {
         font-size: var(--ita-fontSizes-2);
     }
-    main > pre {
+
+    main>pre {
         padding: var(--ita-spacings-5);
     }
-    main > picture,
-    main > figure,
+
+    main>picture,
+    main>figure,
     main figure.wide,
     main picture:has(.wide) {
         padding: var(--ita-spacings-5);
         max-width: calc(calc(var(--ita-widths-content) + 2 * var(--ita-spacings-5)));
     }
+
     main blockquote {
         padding: 2em 3em;
         font-size: var(--ita-fontSizes-5);
     }
+
     main blockquote::before {
         left: var(--ita-spacings-5);
         max-width: calc(100% - 2 * var(--ita-spacings-5));
     }
+
     #floating_toc_container {
         box-shadow: var(--libdoc-soft-shadow);
     }
+
     main .alert {
         font-size: var(--ita-fontSizes-3);
     }
@@ -1020,6 +1182,7 @@ input[type="radio"] ~ label::before {
         transition: opacity 300ms;
         opacity: 0.3;
     }
+
     body:not(.touch-device) #floating_toc:hover #floating_toc__list {
         opacity: 1;
     }
@@ -1029,6 +1192,7 @@ input[type="radio"] ~ label::before {
 .__hover-1 {
     transition: all 300ms;
 }
+
 .__hover-2 {
     transition: all 300ms;
 }
@@ -1044,6 +1208,7 @@ input[type="radio"] ~ label::before {
         opacity: 0.5;
     }
 }
+
 .__anim-blink {
     animation: blink 0.5s linear 0s infinite alternate;
 }
@@ -1054,13 +1219,16 @@ input[type="radio"] ~ label::before {
         width: 100% !important;
         padding: 0px 30px;
     }
+
     main * {
         box-shadow: none !important;
         text-wrap-style: auto !important;
     }
-    main > * {
+
+    main>* {
         padding: 0 !important;
     }
+
     #nav_small_devices,
     #floating_toc_container,
     #toc_main,
@@ -1072,21 +1240,25 @@ input[type="radio"] ~ label::before {
     main h4 a,
     main h5 a,
     main h6 a,
-    main > pre > div:first-child {
+    main>pre>div:first-child {
         display: none;
     }
-    main > pre {
+
+    main>pre {
         border: none;
         box-shadow: none;
     }
-    main > pre > code {
+
+    main>pre>code {
         box-shadow: none;
         white-space: pre-wrap;
         font-variation-settings: "slnt" 0, "CASL" 0, "CRSV" 0, "MONO" 1, "wght" 500;
     }
-    main > pre > code::before {
+
+    main>pre>code::before {
         margin-top: 1em;
     }
+
     main h1,
     main h2,
     main h3,
@@ -1096,6 +1268,7 @@ input[type="radio"] ~ label::before {
         padding-left: 0px !important;
         padding-right: 0px !important;
     }
+
     footer {
         min-height: 0 !important;
     }
