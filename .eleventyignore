@@ -1,4 +1,6 @@
 README.md
-sandboxes/
+bin/
+typst/
+scripts/
 assets/
-# ___dummy_content/
+sandboxes/

@@ -1,3 +1,4 @@
 {
-  "layout": "libdoc_page.liquid"
+  "layout": "page.liquid",
+  "tags": ["chapter"]
 }

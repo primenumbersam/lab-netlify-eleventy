@@ -1,0 +1,599 @@
+/* ==========================================================================
+   BAUHAUS DESIGN SYSTEM & THEME
+   - Form follows function (형태는 기능을 따른다)
+   - 기하학적 형태, 선명한 굵은 선 (Brutalism & Modernism), 삼원색 포인트
+   - Dark / Light Mode 완전 대응 및 모바일 반응형
+   ========================================================================== */
+
+:root {
+  /* 바우하우스 삼원색 (Primary Bauhaus Triad) */
+  --bh-red: #D82B27;
+  --bh-blue: #185ADB;
+  --bh-yellow: #F4B41A;
+
+  /* 라이트 테마 (바우하우스 캔버스/페이퍼 질감) */
+  --bg-primary: #F6F4EE;
+  --bg-surface: #FFFFFF;
+  --bg-surface-subtle: #ECE8DE;
+  --text-primary: #181818;
+  --text-secondary: #58554E;
+  --border-color: #181818;
+  --border-subtle: #D2CDC2;
+  --shadow-block: 4px 4px 0px #181818;
+  --shadow-block-sm: 2px 2px 0px #181818;
+  --code-bg: #EAE6DB;
+  --font-mono: "JetBrains Mono", "Fira Code", monospace;
+  --font-sans: -apple-system, BlinkMacSystemFont, "Pretendard", "Segoe UI", Roboto, sans-serif;
+  
+  --sidebar-width: 290px;
+  --header-height: 64px;
+}
+
+[data-theme="dark"] {
+  /* 다크 테마 (매트 차콜 잉크 & 비비드 네온 삼원색) */
+  --bg-primary: #121316;
+  --bg-surface: #1B1D22;
+  --bg-surface-subtle: #24272E;
+  --text-primary: #F0EEEA;
+  --text-secondary: #A2A4AA;
+  --border-color: #434854;
+  --border-subtle: #2C3038;
+  --shadow-block: 4px 4px 0px #000000;
+  --shadow-block-sm: 2px 2px 0px #000000;
+  --code-bg: #22252C;
+}
+
+/* Base Reset & Typography */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.65;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ==========================================================================
+   Header (Bauhaus Top Bar)
+   ========================================================================== */
+.bh-header {
+  height: var(--header-height);
+  background: var(--bg-surface);
+  border-bottom: 3px solid var(--border-color);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1.5rem;
+}
+
+.bh-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+  color: var(--text-primary);
+  font-weight: 900;
+  font-size: 1.15rem;
+  letter-spacing: -0.5px;
+}
+
+.bh-shapes-badge {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.bh-shape-square { width: 12px; height: 12px; background: var(--bh-red); }
+.bh-shape-circle { width: 12px; height: 12px; background: var(--bh-blue); border-radius: 50%; }
+.bh-shape-triangle {
+  width: 0; height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-bottom: 12px solid var(--bh-yellow);
+}
+
+.bh-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+/* Bauhaus Button Elements */
+.bh-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.45rem 0.85rem;
+  font-size: 0.88rem;
+  font-weight: 700;
+  border: 2px solid var(--border-color);
+  background: var(--bg-surface);
+  color: var(--text-primary);
+  cursor: pointer;
+  box-shadow: var(--shadow-block-sm);
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+  text-decoration: none;
+}
+
+.bh-btn:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: 3px 3px 0px var(--border-color);
+}
+
+.bh-btn:active {
+  transform: translate(1px, 1px);
+  box-shadow: 1px 1px 0px var(--border-color);
+}
+
+.bh-btn-primary {
+  background: var(--bh-blue);
+  color: #FFFFFF !important;
+  border-color: var(--border-color);
+}
+
+.bh-btn-accent {
+  background: var(--bh-red);
+  color: #FFFFFF !important;
+  border-color: var(--border-color);
+}
+
+.bh-btn-yellow {
+  background: var(--bh-yellow);
+  color: #181818 !important;
+  border-color: var(--border-color);
+}
+
+/* ==========================================================================
+   Main Layout Grid
+   ========================================================================== */
+.bh-container {
+  display: flex;
+  flex: 1;
+  max-width: 1400px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* Sidebar Navigation */
+.bh-sidebar {
+  width: var(--sidebar-width);
+  background: var(--bg-surface);
+  border-right: 3px solid var(--border-color);
+  padding: 1.5rem 1rem;
+  flex-shrink: 0;
+  overflow-y: auto;
+  position: sticky;
+  top: var(--header-height);
+  height: calc(100vh - var(--header-height));
+}
+
+.bh-sidebar-title {
+  font-size: 0.75rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--text-secondary);
+  margin-bottom: 0.85rem;
+  padding-left: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.bh-sidebar-title::before {
+  content: "";
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background: var(--bh-red);
+}
+
+.bh-nav-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.bh-nav-item a {
+  display: block;
+  padding: 0.6rem 0.75rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  text-decoration: none;
+  border: 2px solid transparent;
+  transition: all 0.15s ease;
+}
+
+.bh-nav-item a:hover {
+  background: var(--bg-surface-subtle);
+  border-color: var(--border-color);
+}
+
+.bh-nav-item.active a {
+  background: var(--bh-yellow);
+  color: #181818;
+  border: 2px solid var(--border-color);
+  box-shadow: var(--shadow-block-sm);
+  font-weight: 800;
+}
+
+/* Content Area */
+.bh-main-content {
+  flex: 1;
+  min-width: 0;
+  padding: 2.5rem 3.5rem;
+  background: var(--bg-primary);
+}
+
+/* ==========================================================================
+   Article & Typography
+   ========================================================================== */
+.bh-article {
+  max-width: 840px;
+  margin: 0 auto;
+}
+
+.bh-article-header {
+  margin-bottom: 2.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 3px solid var(--border-color);
+}
+
+.bh-tag {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  padding: 0.2rem 0.6rem;
+  background: var(--bh-yellow);
+  color: #181818;
+  border: 1.5px solid var(--border-color);
+  margin-bottom: 0.85rem;
+}
+
+.bh-article-title {
+  font-size: 2.35rem;
+  font-weight: 900;
+  line-height: 1.25;
+  letter-spacing: -0.75px;
+  margin-bottom: 0.75rem;
+}
+
+.bh-article-desc {
+  font-size: 1.08rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* PDF Card: Typst 연동 Callout */
+.bh-pdf-banner {
+  background: var(--bg-surface);
+  border: 3px solid var(--border-color);
+  box-shadow: var(--shadow-block);
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.25rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.bh-pdf-banner::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 8px;
+  background: var(--bh-red);
+}
+
+.bh-pdf-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.bh-pdf-badge {
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 1px;
+  color: var(--bh-blue);
+  text-transform: uppercase;
+}
+
+.bh-pdf-title {
+  font-size: 1.05rem;
+  font-weight: 800;
+}
+
+/* Markdown Body Styles */
+.bh-content h2 {
+  font-size: 1.65rem;
+  font-weight: 900;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 2px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.bh-content h2::before {
+  content: "";
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  background: var(--bh-blue);
+}
+
+.bh-content h3 {
+  font-size: 1.3rem;
+  font-weight: 800;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+  color: var(--text-primary);
+}
+
+.bh-content p {
+  margin-bottom: 1.25rem;
+  font-size: 1.02rem;
+}
+
+.bh-content ul, .bh-content ol {
+  margin-bottom: 1.25rem;
+  padding-left: 1.5rem;
+}
+
+.bh-content li {
+  margin-bottom: 0.4rem;
+}
+
+.bh-content img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 1.75rem 0;
+  border: 2px solid var(--border-color);
+  box-shadow: var(--shadow-block-sm);
+  background: var(--bg-surface);
+}
+
+.bh-content blockquote {
+  border-left: 5px solid var(--bh-yellow);
+  padding: 0.75rem 1.25rem;
+  background: var(--bg-surface-subtle);
+  border-right: 2px solid var(--border-color);
+  border-top: 2px solid var(--border-color);
+  border-bottom: 2px solid var(--border-color);
+  margin-bottom: 1.5rem;
+  font-style: italic;
+}
+
+.bh-content code {
+  font-family: var(--font-mono);
+  font-size: 0.88em;
+  background: var(--code-bg);
+  padding: 0.15rem 0.35rem;
+  border: 1px solid var(--border-color);
+}
+
+.bh-content pre {
+  background: var(--bg-surface);
+  border: 2px solid var(--border-color);
+  box-shadow: var(--shadow-block-sm);
+  padding: 1.25rem;
+  overflow-x: auto;
+  margin-bottom: 1.5rem;
+}
+
+/* KaTeX mathematical formulas */
+.katex-display {
+  padding: 0.85rem 1rem;
+  overflow-x: auto;
+  overflow-y: hidden;
+  background: var(--bg-surface);
+  border: 2px dashed var(--border-color);
+  margin: 1.5rem 0;
+}
+
+/* ==========================================================================
+   Search Modal (Lightweight Bauhaus Palette)
+   ========================================================================== */
+.bh-modal-backdrop {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 999;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 10vh;
+}
+
+.bh-modal-backdrop.open {
+  display: flex;
+}
+
+.bh-modal {
+  width: 90%;
+  max-width: 600px;
+  background: var(--bg-surface);
+  border: 3px solid var(--border-color);
+  box-shadow: 8px 8px 0px var(--border-color);
+  padding: 1.5rem;
+}
+
+.bh-search-input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-size: 1.1rem;
+  border: 2px solid var(--border-color);
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: inherit;
+  outline: none;
+  margin-bottom: 1rem;
+}
+
+.bh-search-input:focus {
+  border-color: var(--bh-blue);
+  box-shadow: 0 0 0 2px var(--bh-blue);
+}
+
+.bh-search-results {
+  list-style: none;
+  max-height: 350px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.bh-search-results a {
+  display: block;
+  padding: 0.75rem;
+  border: 1.5px solid var(--border-subtle);
+  text-decoration: none;
+  color: var(--text-primary);
+  transition: all 0.15s ease;
+}
+
+.bh-search-results a:hover {
+  background: var(--bh-yellow);
+  color: #181818;
+  border-color: var(--border-color);
+}
+
+/* ==========================================================================
+   Mobile Responsiveness (max-width: 860px)
+   ========================================================================== */
+.bh-mobile-menu-btn {
+  display: none;
+}
+
+@media (max-width: 860px) {
+  .bh-mobile-menu-btn {
+    display: inline-flex;
+  }
+
+  .bh-sidebar {
+    position: fixed;
+    top: var(--header-height);
+    left: -100%;
+    width: 280px;
+    height: calc(100vh - var(--header-height));
+    z-index: 90;
+    transition: left 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 4px 0 0px var(--border-color);
+  }
+
+  .bh-sidebar.open {
+    left: 0;
+  }
+
+  .bh-main-content {
+    padding: 1.5rem 1.25rem;
+  }
+
+  .bh-article-title {
+    font-size: 1.85rem;
+  }
+
+  .bh-pdf-banner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  /* 모바일 뷰 헤더 최적화 (텍스트 오버플로우 방지) */
+  .bh-header {
+    padding: 0 0.85rem;
+  }
+
+  .bh-brand-text {
+    display: none;
+  }
+
+  .bh-search-text {
+    display: none;
+  }
+
+  .bh-actions {
+    gap: 0.4rem;
+  }
+
+  .bh-btn {
+    padding: 0.4rem 0.65rem;
+  }
+}
+
+/* ==========================================================================
+   Bauhaus Footer
+   ========================================================================== */
+.bh-footer {
+  margin-top: 4rem;
+  padding-top: 1.75rem;
+  border-top: 3px solid var(--border-color);
+}
+
+.bh-footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.bh-footer-text {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.bh-footer-links {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.bh-footer-link {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  text-decoration: none;
+  border-bottom: 2px solid var(--bh-yellow);
+  transition: all 0.15s ease;
+}
+
+.bh-footer-link:hover {
+  background: var(--bh-yellow);
+  color: #181818;
+}
+
+@media (max-width: 600px) {
+  .bh-footer-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

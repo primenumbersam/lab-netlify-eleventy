@@ -1,0 +1,13 @@
+---
+permalink: /search.json
+eleventyExcludeFromCollections: true
+---
+[
+  {% for item in collections.chapters %}
+    {
+      "title": {{ item.data.title | json }},
+      "url": {{ item.url | json }},
+      "description": {{ item.data.description | default: "" | json }}
+    }{% unless forloop.last %},{% endunless %}
+  {% endfor %}
+]

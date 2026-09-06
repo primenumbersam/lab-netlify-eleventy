@@ -1,11 +1,11 @@
 ---
 title: 인공지능 수학교과서
-description: AI기술 이해를 위한 중딩용 수학교과서
-layout: libdoc_page.liquid
+description: AI기술 이해를 위한 초급 수학교과서
+layout: page.liquid
 permalink: /
 ---
 
-![Cover Image](/assets/cover.jpg)
+<img src="/assets/cover.jpg" alt="Cover Image" style="width: 70%; display: block; margin: 1.5rem auto;">
 
-**AI기술 이해를 위한 중학생용 수학교과서** 입니다.
-좌측의 목차를 통해 1단원부터 차례대로 학습을 진행해 보세요!
+
+**AI기술 이해를 위한 왕초보용 수학교과서** 예요.

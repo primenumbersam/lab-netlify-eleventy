@@ -1,0 +1,34 @@
+---
+layout: base.liquid
+---
+
+<article class="bh-article">
+  <header class="bh-article-header">
+    {% if eleventyNavigation.order %}
+      <span class="bh-tag">CHAPTER {{ eleventyNavigation.order }}</span>
+    {% endif %}
+    <h1 class="bh-article-title">{{ title }}</h1>
+    {% if description %}
+      <p class="bh-article-desc">{{ description }}</p>
+    {% endif %}
+  </header>
+
+  {% if pdf %}
+    <!-- Typst 조판 심화 각론 PDF 배너 카드 -->
+    <div class="bh-pdf-banner">
+      <div class="bh-pdf-info">
+        <span class="bh-pdf-badge">📄 TYPSETTING PAPER (TYPST)</span>
+        <div class="bh-pdf-title">이 단원의 심화 조판 각론 문서가 준비되어 있습니다.</div>
+        <div style="font-size: 0.85rem; color: var(--text-secondary);">수식 및 증명이 포함된 고품질 인쇄용 PDF 자료입니다.</div>
+      </div>
+      <a href="/pdf/{{ pdf }}" target="_blank" class="bh-btn bh-btn-primary" style="white-space: nowrap;">
+        <span>다운로드 / 열람</span>
+        <span>↗</span>
+      </a>
+    </div>
+  {% endif %}
+
+  <div class="bh-content">
+    {{ content }}
+  </div>
+</article>

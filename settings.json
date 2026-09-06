@@ -1,25 +1,18 @@
 {
-    "siteTitle": "AI기술 기초수학",
-    "siteDescription": "AI기술 이해를 위한 중딩용 수학교과서",
+    "siteTitle": "인공지능 기초수학",
+    "siteDescription": "AI기술 이해를 위한 초급 수학교과서",
     "author": "gitsam",
-    "faviconUrl": "/assets/favicon.png",
-    "openGraphImage": "/assets/cover.png",
-    "blogTitle": "인공지능수학 중딩용 교과서",
-    "blogDescription": "중학생 눈높이에 맞춘 AI기술 수학 교과서",
-    "productionUrl": "https://lab-eleventy-libdoc.netlify.app",
-    "customLinks": [
+    "faviconUrl": "/assets/favicon.svg",
+    "openGraphImage": "/assets/cover.jpg",
+    "footerText": "© 2026 gitsam.",
+    "footerLinks": [
         {
-            "url": "https://github.com/primenumbersam/lab-netlify-eleventy",
-            "text": "GitHub"
+            "text": "GitHub",
+            "url": "https://github.com/primenumbersam/lab-netlify-eleventy"
         },
         {
-            "url": "https://blog.naver.com/primenumbersam",
-            "text": "Naver"
-        },
-        {
-            "url": "/feed.xml",
-            "text": "Atom feed"
+            "text": "Blog",
+            "url": "https://blog.naver.com/primenumbersam"
         }
-    ],
-    "editThisPageRootUrl": "https://github.com/primenumbersam/lab-netlify-eleventy"
+    ]
 }

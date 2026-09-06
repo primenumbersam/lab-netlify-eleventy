@@ -1,9 +1,13 @@
 {
-  "name": "eleventy-libdoc",
-  "version": "0.14.8",
-  "description": "An Eleventy starter project to craft slick and responsive documentation",
+  "name": "lab-netlify-eleventy",
+  "version": "1.0.0",
+  "description": "Deploy Docs with SSG (Eleventy) + Typesetting (Typst) boilerplate",
   "main": "index.js",
   "scripts": {
+    "build:pdf": "./scripts/build-pdf.sh",
+    "build:site": "eleventy",
+    "build": "npm run build:pdf && npm run build:site",
+    "dev": "eleventy --serve --incremental",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -15,8 +19,8 @@
     "@11ty/eleventy-img": "^6.0.1",
     "@11ty/eleventy-navigation": "^0.3.5",
     "@11ty/eleventy-plugin-rss": "^2.0.4",
+    "katex": "^0.18.6",
     "markdown-it": "^14.1.1",
-    "markdown-it-katex": "^2.0.3",
     "sharp": "^0.33.5"
   }
 }
