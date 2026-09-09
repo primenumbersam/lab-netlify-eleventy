@@ -85,6 +85,7 @@ lab-netlify-eleventy/
 │
 ├── scripts/
 │   ├── ensure-typst.sh    # 플랫폼별 Typst 바이너리 자동 다운로드 및 검증
+│   ├── ensure-fonts.sh    # 기본 CJK 한글 폰트(Noto Sans KR) 자동 확보
 │   └── build-pdf.sh       # typst/*.typ 파일들을 _site/pdf/*.pdf로 일괄 컴파일
 │
 └── _site/                 # [배포 산출물] Web HTML + PDF 파일
@@ -113,7 +114,7 @@ npm run dev
 *   마크다운이나 CSS 수정 시 `0.1~0.2초` 내에 변경사항이 즉시 반영된다.
 
 ### 3. Typst PDF 각론 조판 빌드
-Typst CLI가 로컬 환경에 없어도 `scripts/ensure-typst.sh`가 Linux 바이너리를 자동 확보하여 컴파일을 수행한다:
+Typst CLI와 한글 폰트가 환경에 없어도 `scripts/ensure-typst.sh`와 `scripts/ensure-fonts.sh`가 Linux 바이너리와 기본 한글 폰트(Noto Sans KR Variable)를 자동 확보하여 컴파일을 수행한다:
 ```bash
 npm run build:pdf
 ```

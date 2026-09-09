@@ -39,7 +39,7 @@
   )
 
   set text(
-    font: ("Pretendard", "Noto Sans CJK KR", "Liberation Sans", "Arial"),
+    font: ("Pretendard", "Noto Sans KR", "Noto Sans CJK KR", "Liberation Sans", "Arial"),
     size: 10pt,
     fill: bauhaus-black,
     lang: "ko",

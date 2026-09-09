@@ -5,3 +5,5 @@ _site
 .DS_Store
 .env
 bin/
+typst/fonts/*.ttf
+typst/fonts/*.otf
