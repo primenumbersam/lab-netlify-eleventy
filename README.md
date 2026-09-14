@@ -1,7 +1,7 @@
 # 📘 Deploy Docs with SSG + Typesetting
 > **Eleventy(Web SSG)**와 **Typst(Typesetting PDF)**를 결합한 초경량 미니멀 보일러플레이트 (Lightweight Minimal Boilerplate)
 
-인공지능 이해를 위한 기초수학 교과서를 주제로 구축되었으며, **웹에는 개괄적인 총론**을 빠르고 반응성 높은 SSG로 제공하고, **심화 각론은 수식 조판 엔진인 Typst를 통해 고품질 PDF**로 빌드하여 HTML에 유기적으로 연결한다.
+인공지능 이해를 위한 기초수학 교과서를 주제로 구축되었으며,개괄적인 **총론**은 **Web**으로 빠르고 반응성 높은 SSG로 제공하고, 심화 **각론**은 수식 조판 엔진인 Typst를 통해 **PDF**로 빌드하여 HTML에 유기적으로 연결한다.
 
 [🌐 배포 사이트 미리보기 (Netlify)](https://lab-eleventy-libdoc.netlify.app)
 
@@ -9,7 +9,7 @@
 
 ## 🎯 프로젝트 목적 및 설계 철학
 
-기존 복잡한 테마(LibDoc 등)는 과도한 디렉터리 뎁스, 수많은 블랙박스 설정 파일, CPU를 과점유하는 실시간 이미지 프로세싱 등으로 인해 개발 환경에서 극심한 병목과 유지보수 피로를 유발했다.
+기존 테마(LibDoc 등)는 과도한 디렉터리 뎁스, 수많은 블랙박스 설정 파일, CPU를 과점유하는 실시간 이미지 프로세싱 등으로 인해 개발 환경에서 극심한 병목과 유지보수 피로를 유발했다.
 
 본 프로젝트는 다음 철학을 바탕으로 재설계되었다:
 
@@ -21,7 +21,7 @@
 3. **Bauhaus Art Style UI**:
    - 기하학적 형태(원·사각형·삼각형), 선명한 굵은 선(Bold Borders), 바우하우스 삼원색(Red `#D82B27`, Blue `#185ADB`, Yellow `#F4B41A`) 기반의 독창적이고 기능적인 디자인 시스템.
    - 다크/라이트 테마 및 모바일 드로어 메뉴 지원.
-4. **Zero-Overhead & One-Step Pipeline**:
+4. **No-Overhead & One-Step Pipeline**:
    - 로컬에서는 `0.2초` 내외의 초고속 증분 빌드를 제공하고, Netlify 배포 환경에서는 `npm run build` 명령 하나로 Typst 컴파일과 웹 빌드가 동시에 수행된다.
 
 ---
