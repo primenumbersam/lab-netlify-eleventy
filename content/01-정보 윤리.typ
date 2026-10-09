@@ -1,4 +1,4 @@
-#import "templates/paper.typ": *
+#import "/typst/templates/paper.typ": *
 
 #show: paper.with(
   title: "인공지능 윤리와 생성 모델 저작권 판례 분석",

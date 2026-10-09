@@ -1,0 +1,120 @@
+/**
+ * Slide Typography & Layout Controls (src/slides.css)
+ * 슬라이드 HTML의 Container, Header, 본문, 이미지 크기 컨트롤러
+ * 
+ * 사용자가 각 폰트 크기 및 컨테이너 높이를 직관적으로 변경할 수 있도록 최상단 CSS 변수(--slide-*)로 정의됨.
+ */
+
+:root {
+  /* ========================================================
+     [사용자 설정 컨트롤러]
+     필요에 따라 아래 수치들을 직접 변경하여 슬라이드 레이아웃을 조정하세요.
+     ======================================================== */
+
+  /* 1. 슬라이드 본문 컨테이너 및 스크롤 영역 */
+  --slide-container-max-height: 680px;  /* 슬라이드 내부 컨테이너 최대 높이 */
+  --slide-padding: 24px 44px;           /* 슬라이드 내부 여백 */
+
+  /* 2. 본문 기본 폰트 크기 및 줄간격 (기존의 ~80%) */
+  --slide-base-font-size: 22px;
+  --slide-line-height: 1.5;
+
+  /* 3. Header 폰트 크기 (기존의 80%) */
+  --slide-h1-size: 1.6em;         /* H1 대제목 (기존 2.0em -> 1.6em) */
+  --slide-h2-size: 1.3em;         /* H2 중제목 (기존 1.6em -> 1.3em) */
+  --slide-h3-size: 1.05em;        /* H3 소제목 (기존 1.3em -> 1.05em) */
+  --slide-h4-size: 0.9em;         /* H4 소제목 (기존 1.1em -> 0.9em) */
+
+  /* 4. 본문 요소 크기 */
+  --slide-list-size: 1em;         /* 리스트 글자 크기 */
+  --slide-blockquote-size: 0.9em; /* 인용문 글자 크기 */
+  --slide-code-size: 0.8em;       /* 코드 블록 글자 크기 */
+
+  /* 5. 이미지 최대 높이 (텍스트와 공존할 때 화면 잘림 방지) */
+  --slide-img-max-height: 220px;
+  --slide-img-margin: 8px 0 14px 0;
+}
+
+/* --------------------------------------------------------
+   슬라이드 본문 컨테이너: 내용이 길어질 경우 끊김 없이 스크롤 지원
+   -------------------------------------------------------- */
+.reveal .slides > section,
+.reveal .slides > section > section {
+  box-sizing: border-box !important;
+  max-height: var(--slide-container-max-height) !important;
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+  padding: var(--slide-padding) !important;
+  scrollbar-width: thin;
+  scrollbar-color: var(--bh-red, #D82B27) var(--bh-cream, #FDFCF7);
+}
+
+/* 바우하우스 커스텀 스크롤바 */
+.reveal .slides section::-webkit-scrollbar {
+  width: 6px;
+}
+.reveal .slides section::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.05);
+}
+.reveal .slides section::-webkit-scrollbar-thumb {
+  background: var(--bh-red, #D82B27);
+  border-radius: 3px;
+}
+
+/* --------------------------------------------------------
+   Reveal.js 슬라이드 타이포그래피 적용
+   -------------------------------------------------------- */
+
+/* 전체 슬라이드 기본 본문 크기 */
+.reveal {
+  font-size: var(--slide-base-font-size) !important;
+  line-height: var(--slide-line-height) !important;
+}
+
+/* Header 타이포그래피 */
+.reveal h1 {
+  font-size: var(--slide-h1-size) !important;
+}
+
+.reveal h2 {
+  font-size: var(--slide-h2-size) !important;
+}
+
+.reveal h3 {
+  font-size: var(--slide-h3-size) !important;
+}
+
+.reveal h4 {
+  font-size: var(--slide-h4-size) !important;
+}
+
+/* 본문 단락, 목록 및 인용문 */
+.reveal p {
+  font-size: inherit;
+  line-height: var(--slide-line-height);
+}
+
+.reveal ul,
+.reveal ol {
+  font-size: var(--slide-list-size);
+}
+
+.reveal blockquote {
+  font-size: var(--slide-blockquote-size);
+}
+
+/* 이미지 크기 자동 맞춤 */
+.reveal img {
+  max-height: var(--slide-img-max-height) !important;
+  width: auto;
+  margin: var(--slide-img-margin) !important;
+}
+
+/* 코드 블록 */
+.reveal pre code {
+  font-size: var(--slide-code-size) !important;
+}
+
+.reveal :not(pre) > code {
+  font-size: var(--slide-code-size) !important;
+}

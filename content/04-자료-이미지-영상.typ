@@ -1,4 +1,4 @@
-#import "templates/textbook.typ": *
+#import "/typst/templates/textbook.typ": *
 
 #show: project.with(
   title: "디지털 이미지와 3차원 텐서 행렬 변환 연산",

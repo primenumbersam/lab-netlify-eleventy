@@ -1,6 +1,7 @@
-README.md
+README*.md
+content/**/*.typ
+content/*.typ
 bin/
 typst/
-scripts/
 assets/
 sandboxes/

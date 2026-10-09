@@ -1,0 +1,222 @@
+/**
+ * Bauhaus Theme for Reveal.js (src/assets/css/bauhaus-reveal.css)
+ * 기하학적 형태, 굵은 테두리, 바우하우스 삼원색 기반 프레젠테이션 테마
+ */
+
+:root {
+  --bh-red: #D82B27;
+  --bh-blue: #185ADB;
+  --bh-yellow: #F4B41A;
+  --bh-black: #1A1A1A;
+  --bh-cream: #FDFCF7;
+  --bh-gray-bg: #F4F4F0;
+  --bh-border: 3px solid #1A1A1A;
+}
+
+body {
+  background-color: var(--bh-cream);
+}
+
+.reveal {
+  font-family: -apple-system, BlinkMacSystemFont, "Pretendard", "Noto Sans KR", "Apple SD Gothic Neo", sans-serif;
+  font-size: 28px;
+  font-weight: 500;
+  color: var(--bh-black);
+  background-color: var(--bh-cream);
+}
+
+/* ----------------------------------------------------
+   슬라이드 본문 컨테이너 및 텍스트 정렬
+---------------------------------------------------- */
+.reveal .slides section {
+  text-align: left;
+  line-height: 1.5;
+  padding: 20px 40px;
+  box-sizing: border-box;
+}
+
+/* ----------------------------------------------------
+   헤딩 및 바우하우스 컬러 액센트
+---------------------------------------------------- */
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4 {
+  font-family: -apple-system, BlinkMacSystemFont, "Pretendard", "Noto Sans KR", sans-serif;
+  color: var(--bh-black);
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  text-transform: none;
+  margin-bottom: 24px;
+}
+
+.reveal h1 {
+  font-size: 2em;
+  border-bottom: 5px solid var(--bh-red);
+  padding-bottom: 12px;
+  display: inline-block;
+}
+
+.reveal h2 {
+  font-size: 1.6em;
+  border-bottom: 4px solid var(--bh-blue);
+  padding-bottom: 8px;
+  display: inline-block;
+}
+
+.reveal h3 {
+  font-size: 1.3em;
+  border-left: 6px solid var(--bh-yellow);
+  padding-left: 14px;
+  margin-top: 10px;
+}
+
+.reveal h4 {
+  font-size: 1.1em;
+  color: var(--bh-blue);
+}
+
+/* ----------------------------------------------------
+   리스트 및 단락
+---------------------------------------------------- */
+.reveal ul,
+.reveal ol {
+  margin-left: 1.2em;
+  margin-bottom: 20px;
+}
+
+.reveal li {
+  margin-bottom: 12px;
+  line-height: 1.5;
+}
+
+.reveal li::marker {
+  color: var(--bh-red);
+}
+
+.reveal p {
+  margin-bottom: 18px;
+  line-height: 1.6;
+}
+
+.reveal strong {
+  color: var(--bh-black);
+  font-weight: 800;
+  background: linear-gradient(180deg, transparent 65%, rgba(244, 180, 26, 0.4) 65%);
+  padding: 0 4px;
+}
+
+/* ----------------------------------------------------
+   인용구 (Blockquote)
+---------------------------------------------------- */
+.reveal blockquote {
+  width: 100%;
+  margin: 20px 0;
+  padding: 16px 20px;
+  background-color: var(--bh-gray-bg);
+  border: 2px solid var(--bh-black);
+  border-left: 8px solid var(--bh-blue);
+  box-shadow: 4px 4px 0 var(--bh-black);
+  font-style: normal;
+  text-align: left;
+}
+
+/* ----------------------------------------------------
+   이미지 렌더링
+---------------------------------------------------- */
+.reveal img {
+  max-height: 380px;
+  max-width: 90%;
+  object-fit: contain;
+  border: 2px solid var(--bh-black);
+  box-shadow: 4px 4px 0 var(--bh-black);
+  margin: 14px 0;
+  background: #fff;
+  padding: 4px;
+}
+
+/* ----------------------------------------------------
+   코드 블록 및 인라인 코드
+---------------------------------------------------- */
+.reveal pre {
+  width: 100%;
+  margin: 20px 0;
+  box-shadow: 4px 4px 0 var(--bh-black);
+  border: 2px solid var(--bh-black);
+}
+
+.reveal pre code {
+  padding: 16px;
+  font-size: 0.85em;
+  line-height: 1.4;
+  max-height: 420px;
+}
+
+.reveal :not(pre)>code {
+  background: var(--bh-gray-bg);
+  color: var(--bh-red);
+  border: 1px solid var(--bh-black);
+  padding: 2px 6px;
+  font-size: 0.85em;
+  font-weight: 600;
+}
+
+/* ----------------------------------------------------
+   수식 블록
+---------------------------------------------------- */
+.reveal .katex-display {
+  margin: 18px 0;
+  padding: 12px;
+  background: #fff;
+  border: 2px dashed var(--bh-blue);
+}
+
+/* ----------------------------------------------------
+   상단 고정 복귀 버튼 (Esc 단축키)
+---------------------------------------------------- */
+.slide-exit-btn {
+  position: fixed;
+  top: 18px;
+  right: 18px;
+  z-index: 9999;
+  background: var(--bh-black);
+  color: #fff !important;
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: 800;
+  text-decoration: none;
+  border: 2px solid var(--bh-black);
+  box-shadow: 3px 3px 0 var(--bh-yellow);
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.slide-exit-btn:hover {
+  background: var(--bh-red);
+  transform: translate(-1px, -1px);
+  box-shadow: 4px 4px 0 var(--bh-black);
+}
+
+.slide-exit-btn:active {
+  transform: translate(2px, 2px);
+  box-shadow: 0 0 0 transparent;
+}
+
+/* ----------------------------------------------------
+   프로그레스 바 및 컨트롤 UI
+---------------------------------------------------- */
+.reveal .progress {
+  height: 6px;
+  color: var(--bh-red);
+}
+
+.reveal .slide-number {
+  font-weight: 800;
+  color: var(--bh-black);
+  background: var(--bh-yellow);
+  border: 2px solid var(--bh-black);
+  box-shadow: 2px 2px 0 var(--bh-black);
+  padding: 4px 8px;
+}

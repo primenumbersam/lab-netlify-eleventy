@@ -69,11 +69,11 @@
 
   v(14pt)
 
-  if abstract != none [
+  if abstract != none {
     block(
       width: 100%,
       stroke: 1.5pt + bauhaus-black,
-      fill: rgb("F9F9F8"),
+      fill: rgb("#F9F9F8"),
       inset: 14pt,
       [
         #text(weight: "black", size: 9.5pt, fill: bauhaus-blue)[요약 (ABSTRACT)]
@@ -82,7 +82,7 @@
       ]
     )
     v(16pt)
-  ]
+  }
 
   body
 }

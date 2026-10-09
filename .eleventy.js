@@ -111,7 +111,14 @@ export default function(eleventyConfig) {
     });
   });
 
+  // 슬라이드 마크다운 내 상대 이미지 경로를 사이트 루트 절대 경로(/content/...)로 보정
+  eleventyConfig.addFilter("fixSlideImages", function(rawContent) {
+    if (!rawContent) return "";
+    return rawContent.replace(/!\[(.*?)\]\((?!https?:\/\/|\/|data:)(.*?)\)/g, "![$1](/content/$2)");
+  });
+
   // 3. 정적 파일 복사
+  eleventyConfig.addPassthroughCopy({ "src/slides.css": "slides.css" });
   eleventyConfig.addPassthroughCopy({ "src/assets": "assets" });
   eleventyConfig.addPassthroughCopy({ "assets": "assets" });
   eleventyConfig.addPassthroughCopy("content/**/*.{png,jpg,jpeg,gif,svg,webp}");

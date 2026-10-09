@@ -4,7 +4,7 @@
   "description": "Deploy Docs with SSG (Eleventy) + Typesetting (Typst) boilerplate",
   "main": "index.js",
   "scripts": {
-    "build:pdf": "./scripts/build-pdf.sh",
+    "build:pdf": "./typst/scripts/build-pdf.sh",
     "build:site": "eleventy",
     "build": "npm run build:pdf && npm run build:site",
     "dev": "eleventy --serve --incremental",

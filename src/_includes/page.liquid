@@ -4,29 +4,33 @@ layout: base.liquid
 
 <article class="bh-article">
   <header class="bh-article-header">
-    {% if eleventyNavigation.order %}
-      <span class="bh-tag">CHAPTER {{ eleventyNavigation.order }}</span>
+    {% if tags contains "chapter" or eleventyNavigation.order or pdf %}
+    <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 0.85rem;">
+      {% if eleventyNavigation.order %}
+        <span class="bh-tag" style="margin-bottom: 0;">CHAPTER {{ eleventyNavigation.order }}</span>
+      {% endif %}
+
+      {% if tags contains "chapter" %}
+      <a href="{{ page.url }}slide/" target="_blank" class="bh-btn bh-btn-primary" style="padding: 0.2rem 0.6rem; font-size: 0.78rem; text-decoration: none;" title="발표용 전체화면 슬라이드 열람">
+        <span>📽️ Slide</span>
+        <span>↗</span>
+      </a>
+      {% endif %}
+
+      {% if pdf %}
+      <a href="/pdf/{{ pdf }}" target="_blank" class="bh-btn bh-btn-accent" style="padding: 0.2rem 0.6rem; font-size: 0.78rem; text-decoration: none;" title="인쇄용 수식 조판 PDF 열람">
+        <span>📄 PDF (Detailed)</span>
+        <span>↗</span>
+      </a>
+      {% endif %}
+    </div>
     {% endif %}
+
     <h1 class="bh-article-title">{{ title }}</h1>
     {% if description %}
       <p class="bh-article-desc">{{ description }}</p>
     {% endif %}
   </header>
-
-  {% if pdf %}
-    <!-- Typst 조판 심화 각론 PDF 배너 카드 -->
-    <div class="bh-pdf-banner">
-      <div class="bh-pdf-info">
-        <span class="bh-pdf-badge">📄 TYPSETTING PAPER (TYPST)</span>
-        <div class="bh-pdf-title">경량 조판도구 TYPST에서 찍어낸 각론 PDF</div>
-        <div style="font-size: 0.85rem; color: var(--text-secondary);">수식 및 증명이 포함된 인쇄용 PDF 자료</div>
-      </div>
-      <a href="/pdf/{{ pdf }}" target="_blank" class="bh-btn bh-btn-primary" style="white-space: nowrap;">
-        <span>다운로드 / 열람</span>
-        <span>↗</span>
-      </a>
-    </div>
-  {% endif %}
 
   <div class="bh-content">
     {{ content }}

@@ -1,0 +1,76 @@
+---
+pagination:
+  data: collections.chapters
+  size: 1
+  alias: chapter
+permalink: "{{ chapter.url }}slide/index.html"
+layout: false
+eleventyExcludeFromCollections: true
+---
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>{{ chapter.data.title }} | 발표 슬라이드</title>
+
+  <!-- Reveal.js 핵심 및 플러그인 스타일 CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.1.0/reset.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.1.0/reveal.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.1.0/theme/white.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.1.0/plugin/highlight/monokai.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+
+  <!-- 바우하우스 슬라이드 기본 테마 -->
+  <link rel="stylesheet" href="/assets/css/bauhaus-reveal.css">
+
+  <!-- 슬라이드 타이포그래피 제어 (헤더 및 본문 폰트 크기 조절) -->
+  <link rel="stylesheet" href="/slides.css">
+</head>
+<body>
+  <!-- 웹 총론 복귀 버튼 -->
+  <a href="{{ chapter.url }}" class="slide-exit-btn" title="웹 본문으로 복귀 (Esc)">
+    ✕ 본문 복귀
+  </a>
+
+  <div class="reveal">
+    <div class="slides">
+      <!-- data-separator: 가로 슬라이드 (---), data-separator-vertical: 세로 슬라이드 (--) -->
+      <section data-markdown
+               data-separator="^\r?\n---\r?\n"
+               data-separator-vertical="^\r?\n--\r?\n"
+               data-notes="^Note:">
+        <textarea data-template>
+{{ chapter.rawInput | fixSlideImages }}
+        </textarea>
+      </section>
+    </div>
+  </div>
+
+  <!-- Reveal.js 코어 및 플러그인 스크립트 CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.1.0/reveal.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.1.0/plugin/markdown/markdown.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.1.0/plugin/highlight/highlight.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.1.0/plugin/math/math.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.1.0/plugin/notes/notes.min.js"></script>
+  <script>
+    Reveal.initialize({
+      width: 1200,
+      height: 750,
+      margin: 0.04,
+      hash: true,
+      slideNumber: 'c/t',
+      history: true,
+      center: false,
+      transition: 'slide',
+      plugins: [ RevealMarkdown, RevealHighlight, RevealMath.KaTeX, RevealNotes ],
+      keyboard: {
+        // Esc 키(27) 누르면 원래 웹 총론 페이지로 복귀
+        27: function() {
+          window.location.href = "{{ chapter.url }}";
+        }
+      }
+    });
+  </script>
+</body>
+</html>
